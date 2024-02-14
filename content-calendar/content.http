@@ -24,3 +24,19 @@ Content-Type: application/json
     "url": " "
 }
 
+###Update Content
+PUT http://localhost:8080/api/content/2
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": "Second Post",
+  "desc": "This is my second blog post",
+  "status": "IDEA",
+  "contentType": "ARTICLE",
+  "dateCreated": "2024-02-14T13:19:22.1129697",
+  "dateUpdated": "2024-02-14T13:19:22.1129697",
+  "url": "http://localhost:8080/my_content"
+}
+
+
