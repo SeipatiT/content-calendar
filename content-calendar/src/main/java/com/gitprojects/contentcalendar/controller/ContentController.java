@@ -2,6 +2,7 @@ package com.gitprojects.contentcalendar.controller;
 
 import com.gitprojects.contentcalendar.model.Content;
 import com.gitprojects.contentcalendar.repository.ContentCollectionRepository;
+import com.gitprojects.contentcalendar.repository.ContentRepository;
 import jakarta.annotation.PostConstruct;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -16,8 +17,10 @@ import java.util.Optional;
 //@CrossOrigin
 @CrossOrigin(origins = "*")
 public class ContentController {
-    private ContentCollectionRepository repository;
-    public ContentController(ContentCollectionRepository repository) {
+//    private ContentCollectionRepository repository;
+    private ContentRepository repository;
+    public ContentController(ContentRepository repository) {
+
         this.repository = repository;
     }
 
@@ -58,6 +61,23 @@ public class ContentController {
         }
         repository.deleteById(id);
     }
+
+    /** This method is used to filter the content by title
+     * @param keyword
+     * @return
+     */
+    @GetMapping("/filter/{keyword}")
+    public List<Content>findByTitle(@PathVariable String keyword){
+        return repository.findAllByTitleContains(keyword);
+    }
+
+
+    //Filter for status not working
+    @GetMapping("/filter/status/{status}")
+    public List<Content>findByStatus(@PathVariable String status){
+        return repository.listByStatus(status);
+    }
+
 
 //    @PostConstruct
 //    private void init(){

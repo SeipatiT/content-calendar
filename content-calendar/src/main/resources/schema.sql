@@ -11,5 +11,5 @@ Create TABLE IF NOT EXISTS Content(
 );
 
 
-INSERT INTO Content(title, desc, status, content_type, date_created, url)
-VALUES('Test Title', 'Test Description', 'active', 'article', NOW(), 'http://www.google.com');
+-- INSERT INTO Content(title, desc, status, content_type, date_created, url)
+-- VALUES('Test Title', 'Test Description', 'IDEA', 'COURSE', NOW(), 'http://www.google.com');
