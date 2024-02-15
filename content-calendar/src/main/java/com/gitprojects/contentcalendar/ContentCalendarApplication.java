@@ -1,5 +1,6 @@
 package com.gitprojects.contentcalendar;
 
+import com.gitprojects.contentcalendar.config.ContentCalendarProperties;
 import com.gitprojects.contentcalendar.model.Content;
 import com.gitprojects.contentcalendar.model.Status;
 import com.gitprojects.contentcalendar.model.Type;
@@ -8,13 +9,16 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
+@EnableConfigurationProperties(ContentCalendarProperties.class)
 @SpringBootApplication
 public class ContentCalendarApplication {
 

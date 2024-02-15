@@ -14,8 +14,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/content")
-//@CrossOrigin
-@CrossOrigin(origins = "*")
+@CrossOrigin
+//@CrossOrigin(origins = "*")
 public class ContentController {
 //    private ContentCollectionRepository repository;
     private ContentRepository repository;
